@@ -10,7 +10,9 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=123456
     volumes:
-      - ./sqldb:/var/lib/mysql 
+      - ./sqldb:/var/lib/mysql
+    command:
+      - mysql -u root -p 123456 -e 'CREATE DATABASE IF NOT EXISTS iii_project CHARACTER SET utf8 COLLATE utf8_general_ci;'
   jupyter:
     build:
       context: ./dockerfile
