@@ -22,7 +22,7 @@ RUN apt-get install -y --no-install-recommends \
     chmod +x /usr/bin/orca
 
 
-RUN pip install PyMYSQL pandas mysql.connector datetime numpy plotly requests
+RUN pip install PyMYSQL pandas mysql.connector datetime numpy plotly requests flask
 
 RUN conda install -c plotly plotly-orca
 
