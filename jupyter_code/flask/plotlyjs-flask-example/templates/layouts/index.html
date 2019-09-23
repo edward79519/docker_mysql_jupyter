@@ -25,9 +25,12 @@
     <script type="text/javascript">
 
         var graphs = {{graphJSON | safe}};
+        var ids = {{ids | safe}};
 
-        Plotly.plot("chart", // the ID of the div, created above
-                        graphs, {});
+        for(var i in graphs) {
+            Plotly.plot(ids[i], // the ID of the div, created above
+                        graphs[i].data,
+                        graphs[i].layout || {});
         }
 
     </script>
