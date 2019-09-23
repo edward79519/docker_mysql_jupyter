@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+    {{super()}}
+    <div class="container">
+        <div class="col-sm-3">
+            {% if current_user.thumbernail %}
+            <img class="img-responsive img-circle" src="{{current_user.thumbernail}}">
+            {% elif current_user.is_authenticated %}
+            <img class="img-responsive img-circle" src="{{ url_for('static', filename='image/unknown.jpg') }}">
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
